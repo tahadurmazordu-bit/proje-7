@@ -1,1 +1,142 @@
-# proje-7
+# hello world
+{
+  "app_metadata": {
+    "name": "Emergent AI",
+    "description": "A minimalist, high-performance AI interface inspired by emergent.sh",
+    "target_audience": "Developers, Creators, Power Users",
+    "vibe": "Technical, Fluid, Precision-Engineered"
+  },
+  "design_system": {
+    "theme": "dark",
+    "colors": {
+      "palette_name": "Electric Void",
+      "background": {
+        "default": "#09090b",
+        "paper": "#18181b",
+        "subtle": "#27272a"
+      },
+      "primary": {
+        "main": "#f97316",
+        "hover": "#ea580c",
+        "foreground": "#ffffff"
+      },
+      "accent": {
+        "main": "#0ea5e9",
+        "foreground": "#ffffff"
+      },
+      "text": {
+        "primary": "#fafafa",
+        "secondary": "#a1a1aa",
+        "muted": "#52525b"
+      },
+      "border": {
+        "default": "#27272a",
+        "active": "#3f3f46"
+      }
+    },
+    "typography": {
+      "font_family": {
+        "headings": "Unbounded, sans-serif",
+        "body": "Plus Jakarta Sans, sans-serif",
+        "code": "JetBrains Mono, monospace"
+      },
+      "scale": {
+        "h1": "text-4xl md:text-6xl font-bold tracking-tight",
+        "h2": "text-3xl md:text-4xl font-semibold tracking-tight",
+        "h3": "text-2xl font-medium",
+        "body": "text-base leading-relaxed",
+        "small": "text-sm text-muted-foreground"
+      }
+    },
+    "spacing": {
+      "container_padding": "p-6 md:p-12",
+      "section_gap": "gap-8 md:gap-16",
+      "component_gap": "gap-4"
+    },
+    "radius": {
+      "default": "rounded-lg",
+      "button": "rounded-md",
+      "input": "rounded-md"
+    },
+    "effects": {
+      "glass": "bg-black/40 backdrop-blur-xl border border-white/10",
+      "glow": "shadow-[0_0_20px_-5px_rgba(249,115,22,0.3)]",
+      "subtle_border": "border border-white/5"
+    }
+  },
+  "assets": {
+    "images": {
+      "login_background": {
+        "url": "https://images.unsplash.com/photo-1761767380566-7a86c3e653a3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGRhcmslMjBnZW9tZXRyaWMlMjBtaW5pbWFsaXN0JTIwdGVjaCUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzY3NDU0MjI2fDA&ixlib=rb-4.1.0&q=85",
+        "alt": "Abstract golden capsules on black background",
+        "usage": "Right side of login page, full height, cover"
+      },
+      "logo_placeholder": {
+        "url": "https://images.pexels.com/photos/15863000/pexels-photo-15863000.jpeg",
+        "alt": "Minimalist abstract shape",
+        "usage": "App logo in sidebar and login"
+      }
+    },
+    "icons": {
+      "library": "lucide-react",
+      "style": "Stroke width 1.5px for elegance"
+    }
+  },
+  "layout_strategy": {
+    "global": {
+      "type": "sidebar-layout",
+      "sidebar_width": "w-64",
+      "sidebar_behavior": "collapsible",
+      "main_content_alignment": "center"
+    },
+    "pages": {
+      "login": {
+        "structure": "grid grid-cols-1 lg:grid-cols-2 h-screen w-full",
+        "left_panel": "flex flex-col justify-center px-8 md:px-24 bg-background",
+        "right_panel": "hidden lg:block relative bg-zinc-900"
+      },
+      "chat_interface": {
+        "structure": "flex h-screen overflow-hidden bg-background",
+        "sidebar": "hidden md:flex flex-col border-r border-border bg-card/50 backdrop-blur-sm",
+        "main_area": "flex-1 flex flex-col relative",
+        "chat_container": "flex-1 overflow-y-auto p-4 md:p-8 scroll-smooth",
+        "input_area": "absolute bottom-0 left-0 right-0 p-4 md:p-8 bg-gradient-to-t from-background via-background to-transparent"
+      }
+    }
+  },
+  "components": {
+    "ModelSelector": {
+      "description": "A pill-shaped dropdown to switch between GPT-5.2, Claude Sonnet 4.5, Gemini 3 Flash",
+      "location": "Top-left or Top-center of chat area",
+      "style": "bg-secondary/50 hover:bg-secondary text-secondary-foreground px-4 py-2 rounded-full text-sm font-medium transition-all border border-white/5"
+    },
+    "ChatInput": {
+      "description": "Floating command center. Not just a text box.",
+      "style": "w-full max-w-3xl mx-auto relative",
+      "elements": [
+        "Textarea (autosizing)",
+        "Feature Toggle (Text/Image/Code)",
+        "Send Button (Icon only, highlighted)"
+      ]
+    },
+    "MessageBubble": {
+      "user": "bg-primary text-primary-foreground rounded-2xl rounded-tr-sm px-6 py-4 max-w-[80%] self-end",
+      "ai": "bg-muted/50 text-foreground rounded-2xl rounded-tl-sm px-6 py-4 max-w-[80%] self-start border border-white/5"
+    },
+    "FeatureSelector": {
+      "description": "Tabs or Toggle Group to switch modes",
+      "style": "flex gap-2 mb-4 justify-center"
+    }
+  },
+  "universal_guidelines": [
+    "Do not use gradients for backgrounds, use solid deep colors or subtle noise textures.",
+    "Ensure all interactive elements have hover states (brightness-110 or bg-opacity change).",
+    "Use 'Unbounded' font for headings to give a futuristic feel.",
+    "Use 'JetBrains Mono' for all code blocks and technical data.",
+    "Input fields should have a subtle border that glows on focus.",
+    "Animations: Use 'framer-motion' for smooth message entry (slide up + fade in).",
+    "Accessibility: Ensure contrast ratios are met. Use 'text-zinc-400' for secondary text, not darker.",
+    "Data-TestID: All buttons and inputs must have data-testid attributes."
+  ],
+  "instructions_to_main_agent": "Implement the login page first. Then build the sidebar and chat layout. Use the 'lucide-react' icons. For the 'emergent' feel, keep the UI extremely clean—no unnecessary borders, just whitespace and alignment. Use the provided image for the login page side panel."
+}
